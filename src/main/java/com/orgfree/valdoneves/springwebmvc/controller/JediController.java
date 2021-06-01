@@ -1,6 +1,8 @@
 package com.orgfree.valdoneves.springwebmvc.controller;
 
 import com.orgfree.valdoneves.springwebmvc.model.Jedi;
+import com.orgfree.valdoneves.springwebmvc.repository.JediRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,11 +12,8 @@ import java.util.List;
 @Controller
 public class JediController {
 
-    //padrão para exibir uma pagina html normal
-//    @GetMapping("/jedi")
-//    public String jedi(){
-//        return "jedi";
-//    }
+    @Autowired
+    private JediRepository repository;
 
     //irá em conjunto com o thymeleaf retornar uma resposta dinamica da pagina
     @GetMapping("/jedi")
@@ -22,8 +21,7 @@ public class JediController {
         final ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("jedi");
 
-        final Jedi luke = new Jedi("Luke", "Skywlker");
-        modelAndView.addObject("allJedi", List.of(luke));
+        modelAndView.addObject("allJedi", repository.getAllJedi());
 
         return modelAndView;
     }
