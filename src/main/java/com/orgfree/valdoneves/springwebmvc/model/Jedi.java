@@ -1,8 +1,13 @@
 package com.orgfree.valdoneves.springwebmvc.model;
 
+import javax.validation.constraints.NotBlank;
+
 public class Jedi {
 
+    @NotBlank
     public String name;
+
+    @NotBlank
     public String lastName;
 
     public Jedi(final String name,final String lastName) {
