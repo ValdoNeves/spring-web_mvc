@@ -2,6 +2,7 @@ package com.orgfree.valdoneves.springwebmvc.rest;
 
 import com.orgfree.valdoneves.springwebmvc.model.Jedi;
 import com.orgfree.valdoneves.springwebmvc.repository.JediRepository;
+import com.orgfree.valdoneves.springwebmvc.service.JediService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
