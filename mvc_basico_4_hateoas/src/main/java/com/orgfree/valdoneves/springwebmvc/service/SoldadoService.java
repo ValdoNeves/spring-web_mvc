@@ -22,6 +22,7 @@ public class SoldadoService {
         this.soldadoRepository = soldadoRepository;
         this.objectMapper = objectMapper;
     }
+    public SoldadoService() {}
 
     public SoldadoResponse buscarSoldado(Long id) {
         SoldadoEntity soldado = soldadoRepository.findById(id).orElseThrow();
